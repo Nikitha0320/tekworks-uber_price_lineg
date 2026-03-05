@@ -7,7 +7,7 @@ df=pd.read_csv("Uberfare.csv")
 df.columns = df.columns.str.strip().str.lower()
 df = df.rename(columns={"distance_km": "distance"})
 
-distance=st.number_input("Distance (km)",min_value=0.1,max_value=50,value=0.1)
+distance=st.number_input("Distance (km)",min_value=0.5,max_value=50,value=0.5)
 passengers=st.number_input("Number of Passengers", min_value=1, max_value=10, value=1)
 if st.button("Predict Fare"):
     X=df[["distance","passengers"]]
@@ -21,6 +21,7 @@ if st.button("Predict Fare"):
     if passengers>1:
         fare_per_passenger=fare[0]/passengers
         st.info(f"Fare per Passenger: ₹{fare_per_passenger:.2f}")
+
 
 
 
