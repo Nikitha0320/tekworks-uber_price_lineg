@@ -1,5 +1,5 @@
 import streamlit as st
-st.title("Uber Fare Prediction🚖💰")
+st.title("Uber Fare Prediction🚕💰")
 st.divider()
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -21,4 +21,5 @@ if st.button("Predict Fare"):
     if passengers>1:
         fare_per_passenger=fare[0]/passengers
         st.info(f"Fare per Passenger: ₹{fare_per_passenger:.2f}")
+
 
